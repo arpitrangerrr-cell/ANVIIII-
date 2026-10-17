@@ -39,7 +39,7 @@ export const CLINIC_INFO = {
   address: "428P+X7H Umrer Rd, Gajanan Mandir Rd, Parsodi, Trimurti Nagar, Nagpur, Maharashtra 440022",
   shortAddress: "Trimurti Nagar, Nagpur, Maharashtra",
   plusCode: "428P+X7H Nagpur, Maharashtra",
-  hoursText: "Monday - Sunday: 9:00 AM - 5:00 PM",
+  hoursText: "Monday - Sunday: 09:00 AM - 5:00 PM",
   status: "OPEN",
   appointmentNote: "Appointments are recommended before visiting.",
   overview: "Avni Dental Clinic is a highly-rated dental practice located in Trimurti Nagar, Nagpur, specializing in advanced dental treatments, painless procedures, and aesthetic smile transformations.",

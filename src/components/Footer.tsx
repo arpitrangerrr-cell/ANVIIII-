@@ -84,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({
             <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
             <div>
               <span className="text-slate-300 font-semibold block mb-0.5">Clinic Hours</span>
-              <span>{CLINIC_INFO.hoursText} (Mon - Sun)</span>
+              <span>{CLINIC_INFO.hoursText}</span>
             </div>
           </div>
 

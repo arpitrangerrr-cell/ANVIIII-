@@ -124,7 +124,7 @@ export const ContactVisitSection: React.FC<ContactVisitSectionProps> = ({
                   Monday - Sunday
                 </p>
                 <p className="text-xs text-slate-300">
-                  9:00 AM - 5:00 PM
+                  09:00 AM - 5:00 PM
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-white/5 flex items-center gap-2">

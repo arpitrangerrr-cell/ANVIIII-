@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Mon - Sun: 9:00 AM - 5:00 PM</span>
+              <span>Mon - Sun: 09:00 AM - 5:00 PM</span>
             </span>
           </div>
           <div className="flex items-center gap-4">

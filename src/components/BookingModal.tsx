@@ -195,7 +195,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">
-                    Time Slot (09:00 - 17:00)
+                    Time Slot (09:00 AM - 5:00 PM)
                   </label>
                   <select
                     value={timeSlot}

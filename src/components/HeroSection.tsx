@@ -68,7 +68,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   Opening hours:
                 </p>
                 <p className="text-xs sm:text-sm text-[#4d5c6f] font-medium">
-                  Monday - Sunday: 09:00 - 17:00
+                  Monday - Sunday: 09:00 AM - 5:00 PM
                 </p>
                 <p className="text-[11px] text-[#78889b] mt-0.5">
                   Appointments recommended before visiting · Trimurti Nagar, Nagpur
