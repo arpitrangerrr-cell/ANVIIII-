@@ -1,0 +1,6 @@
+{
+  "name": "Avni Dental Clinic - Nagpur",
+  "description": "Avni Dental Clinic in Trimurti Nagar, Nagpur. Advanced dental treatments, personalized care, orthodontics, implants, and 5-star patient satisfaction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
