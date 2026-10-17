@@ -1,6 +1,7 @@
 import React from 'react';
 import { CLINIC_INFO } from '../data/clinicData';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import heroSmileImg from '../assets/images/hero_smile_portrait_1792217533812.jpg';
 
 interface HeroSectionProps {
   onScheduleClick: () => void;
@@ -78,9 +79,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Right Image Column */}
             <div className="lg:col-span-6 relative min-h-[340px] sm:min-h-[420px] lg:min-h-full bg-slate-100 overflow-hidden flex items-center justify-center">
               <img
-                src="/src/assets/images/hero_smile_portrait_1792217533812.jpg"
+                src={heroSmileImg}
                 alt="Confident healthy patient smile"
-                className="w-full h-full object-cover object-center grayscale contrast-110 select-none hover:scale-102 transition-transform duration-700"
+                className="w-full h-full object-cover object-center select-none hover:scale-102 transition-transform duration-700"
                 loading="eager"
                 referrerPolicy="no-referrer"
               />

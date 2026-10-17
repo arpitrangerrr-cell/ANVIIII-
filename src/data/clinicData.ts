@@ -1,3 +1,9 @@
+import orthodonticsImg from '../assets/images/orthodontics_smile_1792217558649.jpg';
+import implantsImg from '../assets/images/dental_implants_procedure_1792217535540.jpg';
+import cleaningImg from '../assets/images/dental_cleaning_hygiene_1792217535721.jpg';
+import pediatricImg from '../assets/images/pediatric_dentistry_smile_1792217537260.jpg';
+import operatoryImg from '../assets/images/clinic_modern_operatory_1792217537156.jpg';
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -45,7 +51,7 @@ export const SERVICES: ServiceItem[] = [
     id: "orthodontics",
     title: "Orthodontics",
     category: "Smile Alignment",
-    image: "/src/assets/images/orthodontics_smile_1792217558649.jpg",
+    image: orthodonticsImg,
     shortDesc: "Invisible aligners and precision braces for straighter, healthier teeth.",
     fullDesc: "Modern orthodontic care designed to correct misalignments, crowding, and bite issues with maximum comfort and discreet aesthetics using custom-molded aligners and low-profile ceramic brackets.",
     priceRange: "₹25,000 - ₹85,000",
@@ -56,7 +62,7 @@ export const SERVICES: ServiceItem[] = [
     id: "implants",
     title: "Dental Implants",
     category: "Restoration",
-    image: "/src/assets/images/dental_implants_procedure_1792217535540.jpg",
+    image: implantsImg,
     shortDesc: "Permanent, bio-compatible titanium tooth replacements with natural feel.",
     fullDesc: "State-of-the-art implantology using medical-grade titanium roots and handcrafted zirconia crowns that permanently restore lost teeth, preserving jawbone density and facial structure.",
     priceRange: "₹20,000 - ₹45,000 per tooth",
@@ -67,7 +73,7 @@ export const SERVICES: ServiceItem[] = [
     id: "cleaning",
     title: "Dental Cleaning",
     category: "Preventive Care",
-    image: "/src/assets/images/dental_cleaning_hygiene_1792217535721.jpg",
+    image: cleaningImg,
     shortDesc: "Ultrasonic scaling, stain removal, and polishing for clean breath and gums.",
     fullDesc: "Comprehensive oral prophylaxis combining gentle ultrasonic calculus removal, enamel airflow polishing, and protective remineralizing fluoride glaze to prevent cavities and periodontal disease.",
     priceRange: "₹800 - ₹2,000",
@@ -78,7 +84,7 @@ export const SERVICES: ServiceItem[] = [
     id: "pediatric",
     title: "Pediatric Dentistry",
     category: "Children's Care",
-    image: "/src/assets/images/pediatric_dentistry_smile_1792217537260.jpg",
+    image: pediatricImg,
     shortDesc: "Warm, anxiety-free dental experiences tailored for young children & teens.",
     fullDesc: "A nurturing environment designed specifically for young patients. We focus on preventive cavity seals, painless treatments, early habit correction, and cultivating lifelong positive dental habits.",
     priceRange: "₹600 - ₹2,500",
@@ -89,7 +95,7 @@ export const SERVICES: ServiceItem[] = [
     id: "root-canal",
     title: "Advanced Endodontics",
     category: "Tooth Preservation",
-    image: "/src/assets/images/clinic_modern_operatory_1792217537156.jpg",
+    image: operatoryImg,
     shortDesc: "Single-sitting rotary root canal therapy with local anesthesia comfort.",
     fullDesc: "Precision micro-endodontic therapy that preserves infected or damaged teeth without extraction. Utilizes high-precision apex locators and computerized rotary instrumentation for rapid, painless healing.",
     priceRange: "₹3,500 - ₹6,500",

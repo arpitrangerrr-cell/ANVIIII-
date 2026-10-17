@@ -1,5 +1,7 @@
 import React from 'react';
 import { Cpu, UserCheck } from 'lucide-react';
+import operatoryImg from '../assets/images/clinic_modern_operatory_1792217537156.jpg';
+import doctorImg from '../assets/images/dentist_doctor_portrait_1792217537428.jpg';
 
 interface ClinicSectionProps {
   onMeetTeam: () => void;
@@ -60,7 +62,7 @@ export const ClinicSection: React.FC<ClinicSectionProps> = ({ onMeetTeam }) => {
           {/* Center Column: Large Clinic Operatory Photo */}
           <div className="lg:col-span-5 h-[340px] sm:h-[400px] lg:h-auto rounded-3xl overflow-hidden shadow-xl border border-white/10 group relative">
             <img
-              src="/src/assets/images/clinic_modern_operatory_1792217537156.jpg"
+              src={operatoryImg}
               alt="Avni Dental modern operating room"
               className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700"
               loading="lazy"
@@ -93,7 +95,7 @@ export const ClinicSection: React.FC<ClinicSectionProps> = ({ onMeetTeam }) => {
             {/* Bottom Card: Doctor Portrait */}
             <div className="h-44 sm:h-52 rounded-2xl overflow-hidden shadow-lg border border-white/10 group relative">
               <img
-                src="/src/assets/images/dentist_doctor_portrait_1792217537428.jpg"
+                src={doctorImg}
                 alt="Expert Dentist at Avni Dental Clinic"
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
