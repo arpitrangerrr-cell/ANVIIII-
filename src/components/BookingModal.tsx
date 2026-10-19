@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, CheckCircle2, Phone, User, ArrowRight } from 'lucide-react';
+import { X, Calendar, Clock, CheckCircle2, Phone, User, ArrowRight, Loader2 } from 'lucide-react';
 import { CLINIC_INFO, SERVICES, ServiceItem } from '../data/clinicData';
 
 interface BookingModalProps {
@@ -7,6 +7,9 @@ interface BookingModalProps {
   onClose: () => void;
   preselectedService?: ServiceItem | null;
 }
+
+// Paste your Make.com webhook URL here (or set via VITE_BOOKING_WEBHOOK_URL env variable)
+const WEBHOOK_URL = import.meta.env.VITE_BOOKING_WEBHOOK_URL || '';
 
 export const BookingModal: React.FC<BookingModalProps> = ({
   isOpen,
@@ -25,6 +28,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   const [timeSlot, setTimeSlot] = useState('10:00 AM');
   const [notes, setNotes] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingRef, setBookingRef] = useState('');
 
   if (!isOpen) return null;
@@ -39,11 +43,42 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     '04:30 PM',
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const ref = `AVN-${Math.floor(100000 + Math.random() * 900000)}`;
-    setBookingRef(ref);
-    setIsSubmitted(true);
+    const activeService = SERVICES.find((s) => s.id === selectedServiceId) || SERVICES[0];
+
+    const payload = {
+      bookingRef: ref,
+      patientName: fullName,
+      phone: phone,
+      service: activeService.title,
+      category: activeService.category,
+      date: date,
+      timeSlot: timeSlot,
+      notes: notes || 'None',
+      clinic: CLINIC_INFO.name,
+      submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+    };
+
+    try {
+      if (WEBHOOK_URL) {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      }
+    } catch (err) {
+      // Fail silently — booking confirmation is still shown to patient
+      console.error('Webhook notification failed:', err);
+    } finally {
+      setBookingRef(ref);
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -228,10 +263,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {/* Submit CTA */}
               <button
                 type="submit"
-                className="w-full py-3 text-xs sm:text-sm font-semibold text-white bg-[#3b5e8c] hover:bg-[#466fa5] rounded-full transition-all shadow-md active:scale-98 cursor-pointer flex items-center justify-center gap-2 mt-4"
+                disabled={isSubmitting}
+                className="w-full py-3 text-xs sm:text-sm font-semibold text-white bg-[#3b5e8c] hover:bg-[#466fa5] disabled:opacity-60 disabled:cursor-not-allowed rounded-full transition-all shadow-md active:scale-98 cursor-pointer flex items-center justify-center gap-2 mt-4"
               >
-                <span>Confirm Appointment</span>
-                <ArrowRight className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Confirm Appointment</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
           )}
